@@ -1,10 +1,35 @@
 <div class="multistep-form">
   <form>
-    <input type="text" placeholder="Account Holder Name" />
-    <input type="text" placeholder="Account Number" />
-    <input type="text" placeholder="Currency" />
-    <input type="text" placeholder="Bank" />
-    <input type="text" placeholder="Bank Branch" />
+    <input
+      type="text"
+      name="accountHolderName"
+      [(ngModel)]="formData.accountHolderName"
+      placeholder="Account Holder Name"
+    />
+    <input
+      type="text"
+      name="accountNumber"
+      [(ngModel)]="formData.accountNumber"
+      placeholder="Account Number"
+    />
+    <input
+      type="text"
+      name="currency"
+      [(ngModel)]="formData.currency"
+      placeholder="Currency"
+    />
+    <input
+      type="text"
+      name="bank"
+      [(ngModel)]="formData.bank"
+      placeholder="Bank"
+    />
+    <input
+      type="text"
+      name="bankBranch"
+      [(ngModel)]="formData.bankBranch"
+      placeholder="Bank Branch"
+    />
   </form>
   <button (click)="handlePrev()">Previous</button>
   <button (click)="handleNext()">Next</button>
