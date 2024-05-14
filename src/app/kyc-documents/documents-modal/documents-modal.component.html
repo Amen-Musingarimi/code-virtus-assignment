@@ -1,30 +1,24 @@
 <form class="modal-forms">
   <div class="form-control-wrapper">
-    <label for="nationalID">National ID</label>
+    <label for="nationalID" class="input_label">National ID</label>
     <input
       type="file"
       id="nationalID"
-      accept="image/*"
       placeholder="National ID"
       (change)="onChangeFile($event)"
     />
   </div>
 
   <div class="form-control-wrapper">
-    <label for="proofOfResidence">Proof of Residence</label>
-    <input
-      type="file"
-      id="proofOfResidence"
-      accept="image/*"
-      placeholder="Proof of Residence"
-    />
+    <label for="proofOfResidence" class="input_label">Proof of Residence</label>
+    <input type="file" id="proofOfResidence" placeholder="Proof of Residence" />
   </div>
   <div class="form-control-wrapper">
-    <label for="paySlip">Pay Slip</label>
+    <label for="paySlip" class="input_label">Pay Slip</label>
     <input type="file" id="paySlip" accept="image/*" placeholder="Pay Slip" />
   </div>
   <div class="form-control-wrapper">
-    <label for="bankStatement">Bank Statement</label>
+    <label for="bankStatement" class="input_label">Bank Statement</label>
     <input
       type="file"
       id="bankStatement"
@@ -34,7 +28,9 @@
   </div>
 
   <div class="form-control-wrapper">
-    <label for="employmentConfirmation">Employment Confirmation</label>
+    <label for="employmentConfirmation" class="input_label"
+      >Employment Confirmation</label
+    >
     <input
       type="file"
       id="employmentConfirmation"
