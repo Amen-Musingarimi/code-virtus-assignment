@@ -26,8 +26,14 @@
     </div>
   </div>
   <div>
-    <button class="attach-file-btn">Add Documents</button>
+    <button class="attach-file-btn" (click)="toggleModal()">
+      Add Documents
+    </button>
   </div>
+  <app-documents-modal
+    *ngIf="showModal"
+    (documentSelected)="addDocumentFile($event)"
+  ></app-documents-modal>
   <div class="navigation-buttons-container">
     <button (click)="handlePrev()" class="navigation-button">Previous</button>
     <button (click)="handleFormSubmit()" class="navigation-button">

@@ -67,6 +67,13 @@ export class MultiStepFormComponent {
     (this.formData as any)[field] = value;
   }
 
+  addDocumentFile(fileDetails: { fileName: string; filePath: string }): void {
+    this.formData.documentFiles.push({
+      fileName: fileDetails.fileName,
+      filePath: fileDetails.filePath
+    });
+  }
+
   handleSubmit(): void {
     console.log(this.formData);
     this.formDataService.submitFormData(this.formData).subscribe(
