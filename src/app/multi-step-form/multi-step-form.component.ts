@@ -43,6 +43,10 @@ export class MultiStepFormComponent {
     this.step--;
   }
 
+  navigateToStep(step: number): void {
+    this.step = step;
+  }
+
   handleChange(field: string, value: any): void {
     this.formData[field] = value;
   }

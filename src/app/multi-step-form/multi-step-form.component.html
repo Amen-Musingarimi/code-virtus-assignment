@@ -1,30 +1,47 @@
-<div>
-  <app-personal-data
-    *ngIf="step === 1"
-    [formData]="formData"
-    (nextStep)="nextStep()"
-    (handleChange)="handleChange($event.field, $event.value)"
-  ></app-personal-data>
-  <app-contact-details
-    *ngIf="step === 2"
-    [formData]="formData"
-    (nextStep)="nextStep()"
-    (prevStep)="prevStep()"
-    (handleChange)="handleChange($event.field, $event.value)"
-  ></app-contact-details>
-  <app-banking-details
-    *ngIf="step === 3"
-    [formData]="formData"
-    (nextStep)="nextStep()"
-    (prevStep)="prevStep()"
-    (handleChange)="handleChange($event.field, $event.value)"
-  ></app-banking-details>
+<div class="wrapping-container">
+  <div class="navigation">
+    <a (click)="navigateToStep(1)" [class.active]="step === 1"
+      >Personal Details</a
+    >
+    <a (click)="navigateToStep(2)" [class.active]="step === 2"
+      >Contact Details</a
+    >
+    <a (click)="navigateToStep(3)" [class.active]="step === 3"
+      >Banking Details</a
+    >
+    <a (click)="navigateToStep(4)" [class.active]="step === 4"
+      >Know your cutomer documents</a
+    >
+  </div>
 
-  <app-kyc-documents
-    *ngIf="step === 4"
-    [formData]="formData"
-    (prevStep)="prevStep()"
-    (handleChange)="handleChange($event.field, $event.value)"
-    (handleSubmit)="handleSubmit()"
-  ></app-kyc-documents>
+  <div>
+    <app-personal-data
+      *ngIf="step === 1"
+      [formData]="formData"
+      (nextStep)="nextStep()"
+      (handleChange)="handleChange($event.field, $event.value)"
+    ></app-personal-data>
+    <app-contact-details
+      *ngIf="step === 2"
+      [formData]="formData"
+      (nextStep)="nextStep()"
+      (prevStep)="prevStep()"
+      (handleChange)="handleChange($event.field, $event.value)"
+    ></app-contact-details>
+    <app-banking-details
+      *ngIf="step === 3"
+      [formData]="formData"
+      (nextStep)="nextStep()"
+      (prevStep)="prevStep()"
+      (handleChange)="handleChange($event.field, $event.value)"
+    ></app-banking-details>
+
+    <app-kyc-documents
+      *ngIf="step === 4"
+      [formData]="formData"
+      (prevStep)="prevStep()"
+      (handleChange)="handleChange($event.field, $event.value)"
+      (handleSubmit)="handleSubmit()"
+    ></app-kyc-documents>
+  </div>
 </div>

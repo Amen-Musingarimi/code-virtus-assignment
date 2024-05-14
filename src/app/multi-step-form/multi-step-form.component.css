@@ -1,0 +1,11 @@
+.navigation a {
+  margin-right: 10px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navigation a.active {
+  color: blue;
+  font-weight: bold;
+}
