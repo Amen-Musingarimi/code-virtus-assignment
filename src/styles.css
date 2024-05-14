@@ -11,3 +11,71 @@ body {
   position: relative;
   font-size: 0.8rem;
 }
+
+.multistep-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.add-category-details-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+
+.section-heading-bg {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.section-heading-sm {
+  color: gray;
+}
+
+.form_control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.input_label {
+  color: #000;
+}
+
+.input_area {
+  width: 20rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  color: inherit;
+  font-family: inherit;
+  color: inherit;
+  margin-right: 0.5rem;
+}
+
+.navigation-button {
+  width: 50%;
+  background-color: #00008b;
+  padding: 0.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navigation-button:hover {
+  background-color: #010164;
+}
