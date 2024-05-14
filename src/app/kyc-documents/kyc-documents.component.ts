@@ -14,4 +14,8 @@ export class KycDocumentsComponent {
   handlePrev(): void {
     this.prevStep.emit();
   }
+
+  handleFormSubmit(): void {
+    this.handleSubmit.emit();
+  }
 }

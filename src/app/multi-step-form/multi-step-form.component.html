@@ -19,6 +19,7 @@
     (prevStep)="prevStep()"
     (handleChange)="handleChange($event.field, $event.value)"
   ></app-banking-details>
+
   <app-kyc-documents
     *ngIf="step === 4"
     [formData]="formData"
