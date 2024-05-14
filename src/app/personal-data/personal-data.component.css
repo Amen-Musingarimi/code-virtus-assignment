@@ -1,12 +1,29 @@
-.add_patient_form {
+.multistep-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.add-category-details-cont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1rem;
   height: 100%;
   gap: 1rem;
+}
+
+.section-heading-bg {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.section-heading-sm {
+  color: gray;
 }
 
 .form_control {
