@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormDataService } from '../form-data.service';
+import { Client } from '../client.model';
 
 @Component({
   selector: 'app-multi-step-form',
@@ -7,33 +9,47 @@ import { Component } from '@angular/core';
 })
 export class MultiStepFormComponent {
   step: number = 1;
-  formData: any = {
-    title: '',
-    gender: '',
+  formData: Client = {
+    titleId: 0,
     firstName: '',
-    lastName: '',
-    idNumber: '',
-    dateOfBirth: '',
-    occupation: '',
+    surname: '',
     employmentStatus: '',
-    email: '',
-    mobileNumber: '',
-    telephone: '',
-    communicationType: '',
-    residentNumber: '',
-    suburb: '',
-    city: '',
-    accountHolderName: '',
-    accountNumber: '',
-    currency: '',
-    bank: '',
-    bankBranch: '',
-    nationalIdCopy: null,
-    proofOfResidence: null,
-    paySlip: null,
-    bankStatement: null,
-    confirmationOfEmployment: null
+    genderId: 0,
+    nationalIdNumber: '',
+    occupation: '',
+    dateOfBirth: '',
+    contactDetails: {
+      contactPhoneNumber: '',
+      contactTelephone: '',
+      communicationId: 0,
+      email: '',
+      createAddressCommand: {
+        residenceNumber: '',
+        suburb: '',
+        cityId: 0
+      }
+    },
+    employerDetails: {
+      employerName: '',
+      employerEmail: '',
+      employerPhone: '',
+      employerTelephone: '',
+      createAddressCommand: {
+        residenceNumber: '',
+        suburb: '',
+        cityId: 0
+      }
+    },
+    bankingDetails: {
+      accountNumber: '',
+      accountHolderName: '',
+      currencyId: 0,
+      bankBranchId: 0
+    },
+    documentFiles: []
   };
+
+  constructor(private formDataService: FormDataService) {}
 
   nextStep(): void {
     this.step++;
@@ -48,11 +64,18 @@ export class MultiStepFormComponent {
   }
 
   handleChange(field: string, value: any): void {
-    this.formData[field] = value;
+    (this.formData as any)[field] = value;
   }
 
   handleSubmit(): void {
-    // Submit data to backend
     console.log(this.formData);
+    this.formDataService.submitFormData(this.formData).subscribe(
+      response => {
+        console.log('Form data submitted successfully:', response);
+      },
+      error => {
+        console.error('Error submitting form data:', error);
+      }
+    );
   }
 }
