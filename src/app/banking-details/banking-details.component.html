@@ -1,36 +1,72 @@
 <div class="multistep-form">
-  <form>
-    <input
-      type="text"
-      name="accountHolderName"
-      [(ngModel)]="formData.accountHolderName"
-      placeholder="Account Holder Name"
-    />
-    <input
-      type="text"
-      name="accountNumber"
-      [(ngModel)]="formData.accountNumber"
-      placeholder="Account Number"
-    />
-    <input
-      type="text"
-      name="currency"
-      [(ngModel)]="formData.currency"
-      placeholder="Currency"
-    />
-    <input
-      type="text"
-      name="bank"
-      [(ngModel)]="formData.bank"
-      placeholder="Bank"
-    />
-    <input
-      type="text"
-      name="bankBranch"
-      [(ngModel)]="formData.bankBranch"
-      placeholder="Bank Branch"
-    />
+  <div class="section-heading-container">
+    <h1 class="section-heading-bg">Personal Details</h1>
+    <p class="section-heading-sm">Personal Contact Details</p>
+  </div>
+  <form class="add-category-details-cont">
+    <div class="form_control">
+      <label class="input_label">
+        Account Holder Name
+      </label>
+      <input
+        type="text"
+        name="accountHolderName"
+        [(ngModel)]="formData.accountHolderName"
+        placeholder="Account Holder Name"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Account Number
+      </label>
+      <input
+        type="text"
+        name="accountNumber"
+        [(ngModel)]="formData.accountNumber"
+        placeholder="Account Number"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Currency
+      </label>
+      <input
+        type="text"
+        name="currency"
+        [(ngModel)]="formData.currency"
+        placeholder="Currency"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Bank
+      </label>
+      <input
+        type="text"
+        name="bank"
+        [(ngModel)]="formData.bank"
+        placeholder="Bank"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Bank Branch
+      </label>
+      <input
+        type="text"
+        name="bankBranch"
+        [(ngModel)]="formData.bankBranch"
+        placeholder="Bank Branch"
+        class="input_area"
+      />
+    </div>
   </form>
-  <button (click)="handlePrev()">Previous</button>
-  <button (click)="handleNext()">Next</button>
+  <div class="navigation-buttons-container">
+    <button (click)="handlePrev()" class="navigation-button">Previous</button>
+    <button (click)="handleNext()" class="navigation-button">Next</button>
+  </div>
 </div>
