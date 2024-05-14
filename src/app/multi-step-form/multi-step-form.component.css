@@ -31,3 +31,7 @@
   color: blue;
   border-bottom: 1px solid blue;
 }
+
+.forms-container {
+  width: 100%;
+}
