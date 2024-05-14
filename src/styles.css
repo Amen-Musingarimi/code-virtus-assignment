@@ -88,3 +88,12 @@ body {
 .navigation-button:hover {
   background-color: #010164;
 }
+
+@media only screen and (max-width: 767px) {
+  .add-category-details-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
