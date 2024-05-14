@@ -14,11 +14,6 @@ export class PersonalDataComponent {
   addressValid: boolean = false;
 
   handleNext(): void {
-    if (!this.addressValid || !this.formData.service) {
-      this.errorMessage =
-        'Please fill in both the address and service fields before proceeding.';
-      return;
-    }
     this.nextStep.emit();
   }
 }

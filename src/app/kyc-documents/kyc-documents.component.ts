@@ -10,4 +10,8 @@ export class KycDocumentsComponent {
   @Output() prevStep = new EventEmitter<void>();
   @Output() handleChange = new EventEmitter<{ field: string; value: any }>();
   @Output() handleSubmit = new EventEmitter<void>();
+
+  handlePrev(): void {
+    this.prevStep.emit();
+  }
 }

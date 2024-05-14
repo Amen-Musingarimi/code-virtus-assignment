@@ -1,36 +1,40 @@
-<form>
-  <label for="nationalID">National ID (Image)</label>
-  <input
-    type="file"
-    id="nationalID"
-    accept="image/*"
-    placeholder="National ID"
-  />
+<div class="multi">
+  <form>
+    <label for="nationalID">National ID (Image)</label>
+    <input
+      type="file"
+      id="nationalID"
+      accept="image/*"
+      placeholder="National ID"
+    />
 
-  <label for="proofOfResidence">Proof of Residence (Image)</label>
-  <input
-    type="file"
-    id="proofOfResidence"
-    accept="image/*"
-    placeholder="Proof of Residence"
-  />
+    <label for="proofOfResidence">Proof of Residence (Image)</label>
+    <input
+      type="file"
+      id="proofOfResidence"
+      accept="image/*"
+      placeholder="Proof of Residence"
+    />
 
-  <label for="paySlip">Pay Slip (Image)</label>
-  <input type="file" id="paySlip" accept="image/*" placeholder="Pay Slip" />
+    <label for="paySlip">Pay Slip (Image)</label>
+    <input type="file" id="paySlip" accept="image/*" placeholder="Pay Slip" />
 
-  <label for="bankStatement">Bank Statement (Image)</label>
-  <input
-    type="file"
-    id="bankStatement"
-    accept="image/*"
-    placeholder="Bank Statement"
-  />
+    <label for="bankStatement">Bank Statement (Image)</label>
+    <input
+      type="file"
+      id="bankStatement"
+      accept="image/*"
+      placeholder="Bank Statement"
+    />
 
-  <label for="employmentConfirmation">Employment Confirmation (Image)</label>
-  <input
-    type="file"
-    id="employmentConfirmation"
-    accept="image/*"
-    placeholder="Employment Confirmation"
-  />
-</form>
+    <label for="employmentConfirmation">Employment Confirmation (Image)</label>
+    <input
+      type="file"
+      id="employmentConfirmation"
+      accept="image/*"
+      placeholder="Employment Confirmation"
+    />
+  </form>
+  <button (click)="handlePrev()">Previous</button>
+  <button>Submit</button>
+</div>

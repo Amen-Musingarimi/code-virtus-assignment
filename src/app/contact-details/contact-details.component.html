@@ -1,9 +1,13 @@
-<form>
-  <input type="email" formControlName="email" placeholder="Email" />
-  <input type="text" placeholder="Mobile Number" />
-  <input type="text" formControlName="telephone" placeholder="Telephone" />
-  <input type="text" placeholder="Communication Type" />
-  <input type="text" placeholder="Resident Number" />
-  <input type="text" placeholder="Suburb" />
-  <input type="text" placeholder="City" />
-</form>
+<div class="multistep-form">
+  <form>
+    <input type="email" formControlName="email" placeholder="Email" />
+    <input type="text" placeholder="Mobile Number" />
+    <input type="text" formControlName="telephone" placeholder="Telephone" />
+    <input type="text" placeholder="Communication Type" />
+    <input type="text" placeholder="Resident Number" />
+    <input type="text" placeholder="Suburb" />
+    <input type="text" placeholder="City" />
+  </form>
+  <button (click)="handlePrev()">Previous</button>
+  <button (click)="handleNext()">Next</button>
+</div>
