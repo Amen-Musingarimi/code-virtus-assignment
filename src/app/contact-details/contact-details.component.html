@@ -1,48 +1,97 @@
 <div class="multistep-form">
-  <form>
-    <input
-      type="email"
-      name="email"
-      [(ngModel)]="formData.email"
-      placeholder="Email"
-    />
-    <input
-      type="text"
-      name="mobileNumber"
-      [(ngModel)]="formData.mobileNumber"
-      placeholder="Mobile Number"
-    />
-    <input
-      type="text"
-      name="telephone"
-      [(ngModel)]="formData.telephone"
-      placeholder="Telephone"
-    />
-    <input
-      type="text"
-      name="communicationType"
-      [(ngModel)]="formData.communicationType"
-      placeholder="Communication Type"
-    />
-    <input
-      type="text"
-      name="residentNumber"
-      [(ngModel)]="formData.residentNumber"
-      placeholder="Resident Number"
-    />
-    <input
-      type="text"
-      name="suburb"
-      [(ngModel)]="formData.suburb"
-      placeholder="Suburb"
-    />
-    <input
-      type="text"
-      name="city"
-      [(ngModel)]="formData.city"
-      placeholder="City"
-    />
+  <div class="section-heading-container">
+    <h1 class="section-heading-bg">Contact Details</h1>
+    <p class="section-heading-sm">Personal Contact Details</p>
+  </div>
+  <form class="add-category-details-cont">
+    <div class="form_control">
+      <label class="input_label">
+        Email
+      </label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="formData.email"
+        placeholder="Email"
+        class="input_area"
+      />
+    </div>
+
+    <div class="form_control">
+      <label class="input_label">
+        Mobile Number
+      </label>
+      <input
+        type="text"
+        name="mobileNumber"
+        [(ngModel)]="formData.mobileNumber"
+        placeholder="Mobile Number"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Telephone
+      </label>
+      <input
+        type="text"
+        name="telephone"
+        [(ngModel)]="formData.telephone"
+        placeholder="Telephone"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Communication Type
+      </label>
+      <input
+        type="text"
+        name="communicationType"
+        [(ngModel)]="formData.communicationType"
+        placeholder="Communication Type"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Resident Number
+      </label>
+      <input
+        type="text"
+        name="residentNumber"
+        [(ngModel)]="formData.residentNumber"
+        placeholder="Resident Number"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Suburb
+      </label>
+      <input
+        type="text"
+        name="suburb"
+        [(ngModel)]="formData.suburb"
+        placeholder="Suburb"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        City
+      </label>
+      <input
+        type="text"
+        name="city"
+        [(ngModel)]="formData.city"
+        placeholder="City"
+        class="input_area"
+      />
+    </div>
   </form>
-  <button (click)="handlePrev()">Previous</button>
-  <button (click)="handleNext()">Next</button>
+  <div class="navigation-buttons-container">
+    <button (click)="handlePrev()" class="navigation-button">Previous</button>
+    <button (click)="handleNext()" class="navigation-button">Next</button>
+  </div>
 </div>
