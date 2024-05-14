@@ -8,14 +8,31 @@ import { Component } from '@angular/core';
 export class MultiStepFormComponent {
   step: number = 1;
   formData: any = {
-    address: '',
-    service: '',
-    date: '',
-    time: '',
-    name: '',
-    phoneNumber: '',
+    title: '',
+    gender: '',
+    firstName: '',
+    lastName: '',
+    idNumber: '',
+    dateOfBirth: '',
+    occupation: '',
+    employmentStatus: '',
     email: '',
-    description: ''
+    mobileNumber: '',
+    telephone: '',
+    communicationType: '',
+    residentNumber: '',
+    suburb: '',
+    city: '',
+    accountHolderName: '',
+    accountNumber: '',
+    currency: '',
+    bank: '',
+    bankBranch: '',
+    nationalIdCopy: null,
+    proofOfResidence: null,
+    paySlip: null,
+    bankStatement: null,
+    confirmationOfEmployment: null
   };
 
   nextStep(): void {
