@@ -7,6 +7,7 @@ import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { BankingDetailsComponent } from './banking-details/banking-details.component';
 import { KycDocumentsComponent } from './kyc-documents/kyc-documents.component';
+import { MultiStepFormComponent } from './multi-step-form/multi-step-form.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,11 @@ import { KycDocumentsComponent } from './kyc-documents/kyc-documents.component';
     PersonalDataComponent,
     ContactDetailsComponent,
     BankingDetailsComponent,
-    KycDocumentsComponent
+    KycDocumentsComponent,
+    MultiStepFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

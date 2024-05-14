@@ -1,0 +1,29 @@
+<div>
+  <app-personal-data
+    *ngIf="step === 1"
+    [formData]="formData"
+    (nextStep)="nextStep()"
+    (handleChange)="handleChange($event.field, $event.value)"
+  ></app-personal-data>
+  <app-contact-details
+    *ngIf="step === 2"
+    [formData]="formData"
+    (nextStep)="nextStep()"
+    (prevStep)="prevStep()"
+    (handleChange)="handleChange($event.field, $event.value)"
+  ></app-contact-details>
+  <app-banking-details
+    *ngIf="step === 3"
+    [formData]="formData"
+    (nextStep)="nextStep()"
+    (prevStep)="prevStep()"
+    (handleChange)="handleChange($event.field, $event.value)"
+  ></app-banking-details>
+  <app-kyc-documents
+    *ngIf="step === 4"
+    [formData]="formData"
+    (prevStep)="prevStep()"
+    (handleChange)="handleChange($event.field, $event.value)"
+    (handleSubmit)="handleSubmit()"
+  ></app-kyc-documents>
+</div>
