@@ -19,9 +19,14 @@ export class KycDocumentsComponent {
     this.prevStep.emit();
   }
 
-  toggleModal() {
+  openModal() {
     console.log('Show Model button clicked');
-    this.showModal = !this.showModal;
+    this.showModal = true;
+  }
+
+  closeModal() {
+    console.log('Modal clicked');
+    this.showModal = false;
   }
 
   handleFormSubmit(): void {

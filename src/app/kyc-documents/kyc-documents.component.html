@@ -26,11 +26,11 @@
     </div>
   </div>
   <div>
-    <button class="attach-file-btn" (click)="toggleModal()">
+    <button class="attach-file-btn" (click)="openModal()">
       Add Documents
     </button>
   </div>
-  <div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
     <app-documents-modal
       *ngIf="showModal"
       (documentSelected)="addDocumentFile($event)"
