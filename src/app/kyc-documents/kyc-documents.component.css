@@ -4,10 +4,39 @@
   justify-content: flex-start;
   align-items: flex-start;
   border: 1px solid #d3d3d3;
+  width: 100%;
 }
 
 .document-input-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: flex-start;
+  border-bottom: 1px solid #d3d3d3;
+  width: 100%;
+  font-weight: 500;
+}
+
+.heading-text {
+  border-right: 1px solid #d3d3d3;
+  background-color: #f8f8f8;
+}
+
+.instr-text {
+  height: 100%;
+  padding: 1rem;
+}
+
+.attach-file-btn {
+  color: #fff;
+  background-color: #0dc249;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.attach-file-btn:hover {
+  background-color: #0b8f37;
 }
