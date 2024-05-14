@@ -11,6 +11,7 @@
       <input
         type="email"
         name="email"
+        required
         [(ngModel)]="formData.contactDetails.email"
         placeholder="Email"
         class="input_area"
@@ -24,6 +25,7 @@
       <input
         type="text"
         name="mobileNumber"
+        required
         [(ngModel)]="formData.contactDetails.contactPhoneNumber"
         placeholder="Mobile Number"
         class="input_area"
@@ -36,6 +38,7 @@
       <input
         type="text"
         name="telephone"
+        required
         [(ngModel)]="formData.contactDetails.contactTelephone"
         placeholder="Telephone"
         class="input_area"
@@ -48,6 +51,7 @@
       <input
         type="text"
         name="communicationType"
+        required
         [(ngModel)]="formData.contactDetails.communicationId"
         placeholder="Communication Type"
         class="input_area"
@@ -59,6 +63,7 @@
       </label>
       <input
         type="text"
+        required
         name="residentNumber"
         [(ngModel)]="
           formData.contactDetails.createAddressCommand.residentNumber
@@ -74,6 +79,7 @@
       <input
         type="text"
         name="suburb"
+        required
         [(ngModel)]="formData.contactDetails.createAddressCommand.suburb"
         placeholder="Suburb"
         class="input_area"
@@ -86,6 +92,7 @@
       <input
         type="text"
         name="city"
+        required
         [(ngModel)]="formData.contactDetails.createAddressCommand.cityId"
         placeholder="City"
         class="input_area"
