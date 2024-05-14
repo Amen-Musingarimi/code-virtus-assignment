@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './kyc-documents.component.css'
 })
 export class KycDocumentsComponent {
-
+  @Input() formData: any;
+  @Output() prevStep = new EventEmitter<void>();
+  @Output() handleChange = new EventEmitter<{ field: string; value: any }>();
+  @Output() handleSubmit = new EventEmitter<void>();
 }
