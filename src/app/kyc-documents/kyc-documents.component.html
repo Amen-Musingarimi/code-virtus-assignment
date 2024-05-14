@@ -30,10 +30,12 @@
       Add Documents
     </button>
   </div>
-  <app-documents-modal
-    *ngIf="showModal"
-    (documentSelected)="addDocumentFile($event)"
-  ></app-documents-modal>
+  <div class="modal-overlay" *ngIf="showModal">
+    <app-documents-modal
+      *ngIf="showModal"
+      (documentSelected)="addDocumentFile($event)"
+    ></app-documents-modal>
+  </div>
   <div class="navigation-buttons-container">
     <button (click)="handlePrev()" class="navigation-button">Previous</button>
     <button (click)="handleFormSubmit()" class="navigation-button">

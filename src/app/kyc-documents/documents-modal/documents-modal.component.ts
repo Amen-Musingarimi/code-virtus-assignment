@@ -14,7 +14,7 @@ export class DocumentsModalComponent {
   selectDocument(file: File): void {
     const fileDetails = {
       fileName: file.name,
-      filePath: '/path/to/frontend/' + file.name
+      filePath: `/files/${file.name}`
     };
 
     console.log(fileDetails);
