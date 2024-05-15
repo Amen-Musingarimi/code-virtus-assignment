@@ -10,14 +10,14 @@
       </label>
       <select
         name="title"
-        name="title"
-        [(ngModel)]="formData.title"
+        [(ngModel)]="formData.titleId"
         required
         class="input_area"
+        (change)="handleTitleChange($event)"
       >
-        <option value="male">Mr</option>
-        <option value="female">Mrs</option>
-        <option value="other">Miss</option>
+        <option *ngFor="let title of titles" [value]="title.id">{{
+          title.name
+        }}</option>
       </select>
     </div>
 
