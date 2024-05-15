@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormDataService } from '../form-data.service';
+import { Client } from '../client.model';
 
 @Component({
   selector: 'app-personal-data',
@@ -7,7 +8,8 @@ import { FormDataService } from '../form-data.service';
   styleUrl: './personal-data.component.css'
 })
 export class PersonalDataComponent {
-  @Input() formData: any;
+  @Input()
+  formData!: Client;
   @Output() nextStep = new EventEmitter<void>();
   @Output() handleChange = new EventEmitter<{ field: string; value: any }>();
 
@@ -45,12 +47,12 @@ export class PersonalDataComponent {
 
   handleTitleChange(event: any): void {
     const selectedTitleId = event.target.value;
-    this.handleChange.emit({ field: 'title', value: selectedTitleId });
+    this.handleChange.emit({ field: 'titleId', value: selectedTitleId });
   }
 
   handleGenderChange(event: any): void {
     const selectedGenderId = event.target.value;
-    this.handleChange.emit({ field: 'gender', value: selectedGenderId });
+    this.handleChange.emit({ field: 'genderId', value: selectedGenderId });
   }
 
   errorMessage: string = '';
