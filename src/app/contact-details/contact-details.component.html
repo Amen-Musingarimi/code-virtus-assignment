@@ -93,14 +93,16 @@
       <label class="input_label">
         City
       </label>
-      <input
-        type="text"
-        name="city"
-        required
+      <select
+        name="cityId"
         [(ngModel)]="formData.contactDetails.createAddressCommand.cityId"
-        placeholder="City"
+        required
         class="input_area"
-      />
+      >
+        <option *ngFor="let city of cities" [value]="city.id">{{
+          city.name
+        }}</option>
+      </select>
     </div>
   </form>
   <div class="navigation-buttons-container">

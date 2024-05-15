@@ -13,11 +13,13 @@ export class ContactDetailsComponent {
   @Output() handleChange = new EventEmitter<{ field: string; value: any }>();
 
   communicationTypes: { id: number; name: string }[] = [];
+  cities: { id: number; name: string }[] = [];
 
   constructor(private formDataService: FormDataService) {}
 
   ngOnInit(): void {
     this.fetchCommunicationTypes();
+    this.fetchCities();
   }
 
   fetchCommunicationTypes(): void {
@@ -31,11 +33,30 @@ export class ContactDetailsComponent {
     );
   }
 
+  fetchCities(): void {
+    this.formDataService.fetchCities().subscribe(
+      cities => {
+        this.cities = cities;
+      },
+      error => {
+        console.error('Error fetching Cities:', error);
+      }
+    );
+  }
+
   handleCommunicationTypeChange(event: any): void {
     const selectedCommunicationTypeId = event.target.value;
     this.handleChange.emit({
       field: 'communicationId',
       value: selectedCommunicationTypeId
+    });
+  }
+
+  handleCityChange(event: any): void {
+    const selectedCityId = event.target.value;
+    this.handleChange.emit({
+      field: 'cityId',
+      value: selectedCityId
     });
   }
 

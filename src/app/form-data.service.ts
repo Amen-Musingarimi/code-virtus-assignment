@@ -57,4 +57,17 @@ export class FormDataService {
         )
       );
   }
+
+  fetchCities(): Observable<{ id: number; name: string }[]> {
+    return this.http
+      .get<any>('https://api.clientsure.codevirtus.com/opn/v1/cities')
+      .pipe(
+        map((response: any) =>
+          response.content.map((city: any) => ({
+            id: city.id,
+            name: city.name
+          }))
+        )
+      );
+  }
 }
