@@ -34,14 +34,16 @@
       <label class="input_label">
         Currency
       </label>
-      <input
-        type="text"
-        name="currency"
+      <select
+        name="currencyId"
+        [(ngModel)]="formData.bankingDetails.currencyId"
         required
-        [(ngModel)]="formData.bankingDetails.currency"
-        placeholder="Currency"
         class="input_area"
-      />
+      >
+        <option *ngFor="let currency of currencies" [value]="currency.id">{{
+          currency.name
+        }}</option>
+      </select>
     </div>
     <div class="form_control">
       <label class="input_label">

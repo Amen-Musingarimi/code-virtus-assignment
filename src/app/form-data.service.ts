@@ -70,4 +70,17 @@ export class FormDataService {
         )
       );
   }
+
+  fetchCurrencies(): Observable<{ id: number; name: string }[]> {
+    return this.http
+      .get<any>('https://api.clientsure.codevirtus.com/opn/v1/currencies')
+      .pipe(
+        map((response: any) =>
+          response.content.map((currency: any) => ({
+            id: currency.id,
+            name: currency.name
+          }))
+        )
+      );
+  }
 }
