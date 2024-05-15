@@ -46,12 +46,12 @@ export class PersonalDataComponent {
   }
 
   handleTitleChange(event: any): void {
-    const selectedTitleId = event.target.value;
+    const selectedTitleId = parseInt(event.target.value, 10);
     this.handleChange.emit({ field: 'titleId', value: selectedTitleId });
   }
 
   handleGenderChange(event: any): void {
-    const selectedGenderId = event.target.value;
+    const selectedGenderId = parseInt(event.target.value, 10);
     this.handleChange.emit({ field: 'genderId', value: selectedGenderId });
   }
 
