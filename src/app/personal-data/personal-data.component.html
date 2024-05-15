@@ -27,13 +27,14 @@
       </label>
       <select
         name="gender"
-        [(ngModel)]="formData.gender"
+        [(ngModel)]="formData.genderId"
         required
         class="input_area"
+        (change)="handleGenderChange($event)"
       >
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
+        <option *ngFor="let gender of genders" [value]="gender.id">{{
+          gender.name
+        }}</option>
       </select>
     </div>
 

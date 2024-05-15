@@ -29,4 +29,17 @@ export class FormDataService {
         )
       );
   }
+
+  fetchGenders(): Observable<{ id: number; name: string }[]> {
+    return this.http
+      .get<any>('https://api.clientsure.codevirtus.com/opn/v1/gender')
+      .pipe(
+        map((response: any) =>
+          response.content.map((gender: any) => ({
+            id: gender.id,
+            name: gender.name
+          }))
+        )
+      );
+  }
 }
