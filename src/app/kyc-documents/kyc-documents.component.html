@@ -36,6 +36,7 @@
     <app-documents-modal
       *ngIf="showModal"
       (documentSelected)="addDocumentFile($event)"
+      (modalClosed)="closeModal()"
     ></app-documents-modal>
   </div>
   <div class="navigation-buttons-container">

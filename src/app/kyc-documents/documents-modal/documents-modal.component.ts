@@ -10,6 +10,7 @@ export class DocumentsModalComponent {
     fileName: string;
     filePath: string;
   }>();
+  @Output() modalClosed = new EventEmitter<void>();
 
   selectDocument(file: File): void {
     const fileDetails = {
@@ -27,5 +28,9 @@ export class DocumentsModalComponent {
       console.log(file);
       this.selectDocument(file);
     }
+  }
+
+  close(): void {
+    this.modalClosed.emit();
   }
 }
