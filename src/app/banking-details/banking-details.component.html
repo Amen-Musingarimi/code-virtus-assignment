@@ -46,30 +46,32 @@
       </select>
     </div>
     <div class="form_control">
-      <label class="input_label">
-        Bank
-      </label>
-      <input
-        type="text"
-        name="bank"
+      <label class="input_label">Bank</label>
+      <select
+        name="bankId"
+        (change)="handleBankChange($event)"
         required
-        [(ngModel)]="formData.bankingDetails.bank"
-        placeholder="Bank"
         class="input_area"
-      />
+      >
+        <option value="">Select Bank</option>
+        <option *ngFor="let bank of banks" [value]="bank.id">{{
+          bank.name
+        }}</option>
+      </select>
     </div>
     <div class="form_control">
-      <label class="input_label">
-        Bank Branch
-      </label>
-      <input
-        type="text"
-        name="bankBranch"
+      <label class="input_label">Bank Branch</label>
+      <select
+        name="bankBranchId"
+        [(ngModel)]="formData.bankingDetails.bankBranchId"
         required
-        [(ngModel)]="formData.bankingDetails.bankBranch"
-        placeholder="Bank Branch"
         class="input_area"
-      />
+      >
+        <option value="">Select Bank Branch</option>
+        <option *ngFor="let branch of bankBranches" [value]="branch.id">{{
+          branch.name
+        }}</option>
+      </select>
     </div>
   </form>
   <div class="navigation-buttons-container">

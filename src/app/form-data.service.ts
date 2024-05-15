@@ -83,4 +83,32 @@ export class FormDataService {
         )
       );
   }
+
+  fetchBanks(): Observable<{ id: number; name: string }[]> {
+    return this.http
+      .get<any>('https://api.clientsure.codevirtus.com/opn/v1/banks')
+      .pipe(
+        map((response: any) =>
+          response.content.map((bank: any) => ({
+            id: bank.id,
+            name: bank.name
+          }))
+        )
+      );
+  }
+
+  fetchBankBranches(id: any): Observable<{ id: number; name: string }[]> {
+    return this.http
+      .get<any>(
+        `https://api.clientsure.codevirtus.com/opn/v1/bank-branch/by-bank?bankId=${id}`
+      )
+      .pipe(
+        map((response: any) =>
+          response.content.map((bankBranch: any) => ({
+            id: bankBranch.id,
+            name: bankBranch.name
+          }))
+        )
+      );
+  }
 }

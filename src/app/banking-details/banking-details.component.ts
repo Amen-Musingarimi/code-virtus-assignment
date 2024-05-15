@@ -13,11 +13,14 @@ export class BankingDetailsComponent {
   @Output() handleChange = new EventEmitter<{ field: string; value: any }>();
 
   currencies: { id: number; name: string }[] = [];
+  banks: { id: number; name: string }[] = [];
+  bankBranches: { id: number; name: string }[] = [];
 
   constructor(private formDataService: FormDataService) {}
 
   ngOnInit(): void {
     this.fetchCurrencies();
+    this.fetchBanks();
   }
 
   fetchCurrencies(): void {
@@ -29,6 +32,37 @@ export class BankingDetailsComponent {
         console.error('Error fetching Currencies', error);
       }
     );
+  }
+
+  fetchBanks(): void {
+    this.formDataService.fetchBanks().subscribe(
+      banks => {
+        this.banks = banks;
+      },
+      error => {
+        console.error('Error fetching banks', error);
+      }
+    );
+  }
+
+  fetchBankBranches(id: any): void {
+    this.formDataService.fetchBankBranches(id).subscribe(
+      bankBranches => {
+        this.bankBranches = bankBranches;
+      },
+      error => {
+        console.error('Error fetching bank branches', error);
+      }
+    );
+  }
+
+  handleBankChange(event: any): void {
+    const selectedBankId = event.target.value;
+    this.fetchBankBranches(selectedBankId);
+    this.handleChange.emit({
+      field: 'currencyId',
+      value: selectedBankId
+    });
   }
 
   handleCurrencyChange(event: any): void {
