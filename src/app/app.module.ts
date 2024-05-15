@@ -11,6 +11,7 @@ import { BankingDetailsComponent } from './banking-details/banking-details.compo
 import { KycDocumentsComponent } from './kyc-documents/kyc-documents.component';
 import { MultiStepFormComponent } from './multi-step-form/multi-step-form.component';
 import { DocumentsModalComponent } from './kyc-documents/documents-modal/documents-modal.component';
+import { EmployerDetailsComponent } from './employer-details/employer-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DocumentsModalComponent } from './kyc-documents/documents-modal/documen
     BankingDetailsComponent,
     KycDocumentsComponent,
     MultiStepFormComponent,
-    DocumentsModalComponent
+    DocumentsModalComponent,
+    EmployerDetailsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
