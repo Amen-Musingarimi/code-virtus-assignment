@@ -42,6 +42,10 @@ export class EmployerDetailsComponent {
   errorMessage: string = '';
 
   handleNext(): void {
+    this.formData.employerDetails.createAddressCommand.cityId = parseInt(
+      this.formData.employerDetails.createAddressCommand.cityId,
+      10
+    );
     this.nextStep.emit();
   }
 
