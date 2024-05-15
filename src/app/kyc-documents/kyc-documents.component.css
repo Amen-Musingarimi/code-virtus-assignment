@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.inputs-wrapper {
+  width: 100%;
+}
+
 .document-input-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
