@@ -19,6 +19,9 @@
           title.name
         }}</option>
       </select>
+      <p *ngIf="formSubmitted && !formData.titleId" class="error-message">
+        Title is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -36,6 +39,9 @@
           gender.name
         }}</option>
       </select>
+      <p *ngIf="formSubmitted && !formData.genderId" class="error-message">
+        Gender is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -50,6 +56,9 @@
         class="input_area"
         required
       />
+      <p *ngIf="formSubmitted && !formData.firstName" class="error-message">
+        First Name is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -64,6 +73,9 @@
         class="input_area"
         required
       />
+      <p *ngIf="formSubmitted && !formData.surname" class="error-message">
+        Surname is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -78,6 +90,12 @@
         class="input_area"
         required
       />
+      <p
+        *ngIf="formSubmitted && !formData.nationalIdNumber"
+        class="error-message"
+      >
+        ID Number is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -92,6 +110,15 @@
         class="input_area"
         required
       />
+      <p *ngIf="formSubmitted && !formData.dateOfBirth" class="error-message">
+        Date of birth is required.
+      </p>
+      <p
+        *ngIf="formData.dateOfBirth && isFutureDate(formData.dateOfBirth)"
+        class="error-message"
+      >
+        Date of Birth must be in the past.
+      </p>
     </div>
 
     <div class="form_control">
@@ -106,6 +133,9 @@
         class="input_area"
         required
       />
+      <p *ngIf="formSubmitted && !formData.occupation" class="error-message">
+        Occupation is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -122,6 +152,12 @@
         <option value="male">Employed</option>
         <option value="female">Unempoyed</option>
       </select>
+      <p
+        *ngIf="formSubmitted && !formData.employmentStatus"
+        class="error-message"
+      >
+        Employment Status is required.
+      </p>
     </div>
   </form>
   <div class="navigation-buttons-container">

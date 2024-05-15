@@ -89,6 +89,11 @@ body {
   background-color: #010164;
 }
 
+.error-message {
+  color: red;
+  font-size: 0.75rem;
+}
+
 @media only screen and (max-width: 767px) {
   .add-category-details-cont {
     display: flex;

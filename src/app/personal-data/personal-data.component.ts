@@ -18,6 +18,8 @@ export class PersonalDataComponent {
 
   constructor(private formDataService: FormDataService) {}
 
+  formSubmitted: boolean = false;
+
   ngOnInit(): void {
     this.fetchTitles();
     this.fetchGenders();
@@ -59,6 +61,44 @@ export class PersonalDataComponent {
   addressValid: boolean = false;
 
   handleNext(): void {
-    this.nextStep.emit();
+    this.formSubmitted = true;
+    if (this.validateForm()) {
+      this.nextStep.emit();
+    }
+  }
+
+  validateForm(): boolean {
+    this.errorMessage = '';
+
+    if (
+      !this.formData.titleId ||
+      !this.formData.genderId ||
+      !this.formData.firstName ||
+      !this.formData.surname ||
+      !this.formData.nationalIdNumber ||
+      !this.formData.dateOfBirth ||
+      !this.formData.occupation ||
+      !this.formData.employmentStatus
+    ) {
+      this.errorMessage = 'All fields are required.';
+      return false;
+    }
+
+    const dob = new Date(this.formData.dateOfBirth);
+    const currentDate = new Date();
+    if (dob >= currentDate) {
+      if (this.formSubmitted) {
+        this.errorMessage = 'Date of birth must be in the past.';
+      }
+      return false;
+    }
+
+    return true;
+  }
+
+  isFutureDate(date: string): boolean {
+    const currentDate = new Date();
+    const inputDate = new Date(date);
+    return inputDate > currentDate;
   }
 }
