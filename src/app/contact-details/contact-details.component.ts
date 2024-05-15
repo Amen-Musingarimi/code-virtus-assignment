@@ -17,6 +17,8 @@ export class ContactDetailsComponent {
 
   constructor(private formDataService: FormDataService) {}
 
+  formSubmitted: boolean = false;
+
   ngOnInit(): void {
     this.fetchCommunicationTypes();
     this.fetchCities();
@@ -63,6 +65,7 @@ export class ContactDetailsComponent {
   errorMessage: string = '';
 
   handleNext(): void {
+    this.formSubmitted = true;
     this.formData.contactDetails.communicationId = parseInt(
       this.formData.contactDetails.communicationId,
       10
@@ -71,10 +74,38 @@ export class ContactDetailsComponent {
       this.formData.contactDetails.createAddressCommand.cityId,
       10
     );
-    this.nextStep.emit();
+    if (this.validateForm()) {
+      this.nextStep.emit();
+    }
   }
 
   handlePrev(): void {
     this.prevStep.emit();
+  }
+
+  validateForm(): boolean {
+    this.errorMessage = '';
+
+    if (
+      !this.formData.contactDetails.contactPhoneNumber ||
+      !this.formData.contactDetails.contactTelephone ||
+      !this.formData.contactDetails.communicationId ||
+      !this.formData.contactDetails.email ||
+      !this.formData.contactDetails.createAddressCommand.residenceNumber ||
+      !this.formData.contactDetails.createAddressCommand.suburb ||
+      !this.formData.contactDetails.createAddressCommand.cityId
+    ) {
+      console.log('Invaid Data Error');
+      return false;
+    }
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(this.formData.contactDetails.email)) {
+      this.errorMessage = 'Please enter a valid email address.';
+      console.log('Invalid email');
+      return false;
+    }
+
+    return true;
   }
 }
