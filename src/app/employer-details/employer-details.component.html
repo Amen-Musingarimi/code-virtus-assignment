@@ -79,17 +79,20 @@
         required
       />
     </div>
-
     <div class="form_control">
       <label class="input_label">
         City
       </label>
-      <input
-        name="employementStatus"
-        [(ngModel)]="formData.employerDetails.createAddressCommand.city"
+      <select
+        name="cityId"
+        [(ngModel)]="formData.employerDetails.createAddressCommand.cityId"
         required
         class="input_area"
-      />
+      >
+        <option *ngFor="let city of cities" [value]="city.id">{{
+          city.name
+        }}</option>
+      </select>
     </div>
   </form>
   <div class="navigation-buttons-container">
