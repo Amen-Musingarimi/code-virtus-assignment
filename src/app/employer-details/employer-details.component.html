@@ -1,1 +1,99 @@
-<p>employer-details works!</p>
+<div class="multistep-form">
+  <div class="section-heading-container">
+    <h1 class="section-heading-bg">Employer Details</h1>
+    <p class="section-heading-sm">Employer Contact Details</p>
+  </div>
+  <form class="add-category-details-cont">
+    <div class="form_control">
+      <label class="input_label">
+        Employer Name
+      </label>
+      <input
+        name="employerName"
+        [(ngModel)]="formData.employerDetails.employerName"
+        required
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Email
+      </label>
+      <input
+        type="text"
+        name="employerEmail"
+        [(ngModel)]="formData.employerDetails.employerEmail"
+        required
+        class="input_area"
+      />
+    </div>
+
+    <div class="form_control">
+      <label class="input_label">
+        Mobile Number
+      </label>
+      <input
+        type="text"
+        name="employerPhone"
+        [(ngModel)]="formData.employerDetails.employerPhone"
+        class="input_area"
+        required
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Telephone
+      </label>
+      <input
+        type="text"
+        name="surname"
+        [(ngModel)]="formData.employerDetails.employerTelephone"
+        class="input_area"
+        required
+      />
+    </div>
+
+    <div class="form_control">
+      <label class="input_label">
+        Street Address
+      </label>
+      <input
+        type="text"
+        name="idNumber"
+        [(ngModel)]="
+          formData.employerDetails.createAddressCommand.residenceNumber
+        "
+        class="input_area"
+        required
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Suburb
+      </label>
+      <input
+        type="text"
+        name="dateOfBirth"
+        [(ngModel)]="formData.employerDetails.createAddressCommand.suburb"
+        class="input_area"
+        required
+      />
+    </div>
+
+    <div class="form_control">
+      <label class="input_label">
+        City
+      </label>
+      <input
+        name="employementStatus"
+        [(ngModel)]="formData.employerDetails.createAddressCommand.city"
+        required
+        class="input_area"
+      />
+    </div>
+  </form>
+  <div class="navigation-buttons-container">
+    <button (click)="handlePrev()" class="navigation-button">Previous</button>
+    <button (click)="handleNext()" class="navigation-button">Next</button>
+  </div>
+</div>
