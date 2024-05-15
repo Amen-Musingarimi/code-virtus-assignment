@@ -48,14 +48,18 @@
       <label class="input_label">
         Communication Type
       </label>
-      <input
-        type="text"
-        name="communicationType"
-        required
+      <select
+        name="communicationId"
         [(ngModel)]="formData.contactDetails.communicationId"
-        placeholder="Communication Type"
+        required
         class="input_area"
-      />
+      >
+        <option
+          *ngFor="let communicationType of communicationTypes"
+          [value]="communicationType.id"
+          >{{ communicationType.name }}</option
+        >
+      </select>
     </div>
     <div class="form_control">
       <label class="input_label">

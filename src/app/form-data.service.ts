@@ -42,4 +42,19 @@ export class FormDataService {
         )
       );
   }
+
+  fetchCommunicationTypes(): Observable<{ id: number; name: string }[]> {
+    return this.http
+      .get<any>(
+        'https://api.clientsure.codevirtus.com/opn/v1/communication/all'
+      )
+      .pipe(
+        map((response: any) =>
+          response.content.map((communicationType: any) => ({
+            id: communicationType.id,
+            name: communicationType.name
+          }))
+        )
+      );
+  }
 }
