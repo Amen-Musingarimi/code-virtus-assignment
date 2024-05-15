@@ -102,7 +102,7 @@ Example command:
 To run the project, execute the following command:
 
 ```sh
-  ng start
+  ng serve
 ```
 
 ### Deployment
