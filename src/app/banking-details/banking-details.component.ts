@@ -59,10 +59,6 @@ export class BankingDetailsComponent {
   handleBankChange(event: any): void {
     const selectedBankId = event.target.value;
     this.fetchBankBranches(selectedBankId);
-    this.handleChange.emit({
-      field: 'currencyId',
-      value: selectedBankId
-    });
   }
 
   handleCurrencyChange(event: any): void {
