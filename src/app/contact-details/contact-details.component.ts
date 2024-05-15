@@ -63,6 +63,14 @@ export class ContactDetailsComponent {
   errorMessage: string = '';
 
   handleNext(): void {
+    this.formData.contactDetails.communicationId = parseInt(
+      this.formData.contactDetails.communicationId,
+      10
+    );
+    this.formData.contactDetails.createAddressCommand.cityId = parseInt(
+      this.formData.contactDetails.createAddressCommand.cityId,
+      10
+    );
     this.nextStep.emit();
   }
 
