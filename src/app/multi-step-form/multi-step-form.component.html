@@ -7,9 +7,12 @@
       >Contact Details</a
     >
     <a (click)="navigateToStep(3)" [class.active]="step === 3"
-      >Banking Details</a
+      >Employer Details</a
     >
     <a (click)="navigateToStep(4)" [class.active]="step === 4"
+      >Banking Details</a
+    >
+    <a (click)="navigateToStep(5)" [class.active]="step === 5"
       >Know your cutomer documents</a
     >
   </div>
@@ -28,16 +31,22 @@
       (prevStep)="prevStep()"
       (handleChange)="handleChange($event.field, $event.value)"
     ></app-contact-details>
-    <app-banking-details
+    <app-employer-details
       *ngIf="step === 3"
       [formData]="formData"
       (nextStep)="nextStep()"
       (prevStep)="prevStep()"
       (handleChange)="handleChange($event.field, $event.value)"
-    ></app-banking-details>
-
-    <app-kyc-documents
+    ></app-employer-details>
+    <app-banking-details
       *ngIf="step === 4"
+      [formData]="formData"
+      (nextStep)="nextStep()"
+      (prevStep)="prevStep()"
+      (handleChange)="handleChange($event.field, $event.value)"
+    ></app-banking-details>
+    <app-kyc-documents
+      *ngIf="step === 5"
       [formData]="formData"
       (prevStep)="prevStep()"
       (handleChange)="handleChange($event.field, $event.value)"
