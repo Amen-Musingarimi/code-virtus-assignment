@@ -64,7 +64,11 @@ export class MultiStepFormComponent {
   }
 
   handleChange(field: string, value: any): void {
-    (this.formData as any)[field] = value;
+    if (field === 'titleId' || field === 'genderId') {
+      this.formData[field] = parseInt(value, 10);
+    } else {
+      (this.formData as any)[field] = value;
+    }
   }
 
   addDocumentFile(fileDetails: { fileName: string; filePath: string }): void {
