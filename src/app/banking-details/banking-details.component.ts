@@ -76,6 +76,14 @@ export class BankingDetailsComponent {
   errorMessage: string = '';
 
   handleNext(): void {
+    this.formData.bankingDetails.currencyId = parseInt(
+      this.formData.bankingDetails.currencyId,
+      10
+    );
+    this.formData.bankingDetails.bankBranchId = parseInt(
+      this.formData.bankingDetails.bankBranchId,
+      10
+    );
     this.nextStep.emit();
   }
 
