@@ -62,6 +62,7 @@ export class PersonalDataComponent {
 
   handleNext(): void {
     this.formSubmitted = true;
+    this.formData.dateOfBirth = this.formatDate(this.formData.dateOfBirth);
     if (this.validateForm()) {
       this.nextStep.emit();
     }
@@ -100,5 +101,19 @@ export class PersonalDataComponent {
     const currentDate = new Date();
     const inputDate = new Date(date);
     return inputDate > currentDate;
+  }
+
+  formatDate(date: string): string {
+    if (!date) return '';
+
+    const dateObj = new Date(date);
+    const day = dateObj
+      .getDate()
+      .toString()
+      .padStart(2, '0');
+    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+    const year = dateObj.getFullYear();
+
+    return `${day}/${month}/${year}`;
   }
 }
