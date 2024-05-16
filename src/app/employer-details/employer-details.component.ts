@@ -43,11 +43,33 @@ export class EmployerDetailsComponent {
 
   errorMessage: string = '';
 
+  trimData(text: string) {
+    return text.trim();
+  }
+
   handleNext(): void {
     this.formSubmitted = true;
     this.formData.employerDetails.createAddressCommand.cityId = parseInt(
       this.formData.employerDetails.createAddressCommand.cityId,
       10
+    );
+    this.formData.employerDetails.employerName = this.trimData(
+      this.formData.employerDetails.employerName
+    );
+    this.formData.employerDetails.employerEmail = this.trimData(
+      this.formData.employerDetails.employerEmail
+    );
+    this.formData.employerDetails.employerPhone = this.trimData(
+      this.formData.employerDetails.employerPhone
+    );
+    this.formData.employerDetails.employerTelephone = this.trimData(
+      this.formData.employerDetails.employerTelephone
+    );
+    this.formData.employerDetails.createAddressCommand.residenceNumber = this.trimData(
+      this.formData.employerDetails.createAddressCommand.residenceNumber
+    );
+    this.formData.employerDetails.createAddressCommand.suburb = this.trimData(
+      this.formData.employerDetails.createAddressCommand.suburb
     );
     if (this.validateForm()) {
       this.nextStep.emit();
