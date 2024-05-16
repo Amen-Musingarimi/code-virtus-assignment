@@ -68,6 +68,9 @@ export class PersonalDataComponent {
       this.formData.nationalIdNumber
     );
     this.formData.occupation = this.trimData(this.formData.occupation);
+
+    this.formData.dateOfBirth = this.formatDate(this.formData.dateOfBirth);
+
     if (this.validateForm()) {
       this.nextStep.emit();
     }
