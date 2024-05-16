@@ -74,9 +74,28 @@ export class ContactDetailsComponent {
       this.formData.contactDetails.createAddressCommand.cityId,
       10
     );
+    this.formData.contactDetails.contactPhoneNumber = this.trimData(
+      this.formData.contactDetails.contactPhoneNumber
+    );
+    this.formData.contactDetails.contactTelephone = this.trimData(
+      this.formData.contactDetails.contactTelephone
+    );
+    this.formData.contactDetails.email = this.trimData(
+      this.formData.contactDetails.email
+    );
+    this.formData.contactDetails.createAddressCommand.residenceNumber = this.trimData(
+      this.formData.contactDetails.createAddressCommand.residenceNumber
+    );
+    this.formData.contactDetails.createAddressCommand.suburb = this.trimData(
+      this.formData.contactDetails.createAddressCommand.suburb
+    );
     if (this.validateForm()) {
       this.nextStep.emit();
     }
+  }
+
+  trimData(text: string) {
+    return text.trim();
   }
 
   handlePrev(): void {
