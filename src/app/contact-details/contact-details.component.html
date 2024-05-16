@@ -16,6 +16,20 @@
         placeholder="Email"
         class="input_area"
       />
+      <p
+        *ngIf="formSubmitted && !formData.contactDetails.email"
+        class="error-message"
+      >
+        Email is required.
+      </p>
+      <p
+        *ngIf="
+          formSubmitted && (!formData.contactDetails.email || errorMessage)
+        "
+        class="error-message"
+      >
+        {{ errorMessage }}
+      </p>
     </div>
 
     <div class="form_control">
@@ -30,6 +44,12 @@
         placeholder="Mobile Number"
         class="input_area"
       />
+      <p
+        *ngIf="formSubmitted && !formData.contactDetails.contactPhoneNumber"
+        class="error-message"
+      >
+        Contact Number is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -43,6 +63,12 @@
         placeholder="Telephone"
         class="input_area"
       />
+      <p
+        *ngIf="formSubmitted && !formData.contactDetails.contactTelephone"
+        class="error-message"
+      >
+        Telephone is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -60,6 +86,12 @@
           >{{ communicationType.name }}</option
         >
       </select>
+      <p
+        *ngIf="formSubmitted && !formData.contactDetails.communicationId"
+        class="error-message"
+      >
+        Communication Type is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -70,11 +102,20 @@
         required
         name="residentNumber"
         [(ngModel)]="
-          formData.contactDetails.createAddressCommand.residentNumber
+          formData.contactDetails.createAddressCommand.residenceNumber
         "
         placeholder="Resident Number"
         class="input_area"
       />
+      <p
+        *ngIf="
+          formSubmitted &&
+          !formData.contactDetails.createAddressCommand.residenceNumber
+        "
+        class="error-message"
+      >
+        Resident Number is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -88,6 +129,14 @@
         placeholder="Suburb"
         class="input_area"
       />
+      <p
+        *ngIf="
+          formSubmitted && !formData.contactDetails.createAddressCommand.suburb
+        "
+        class="error-message"
+      >
+        Surbub is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -103,6 +152,14 @@
           city.name
         }}</option>
       </select>
+      <p
+        *ngIf="
+          formSubmitted && !formData.contactDetails.createAddressCommand.cityId
+        "
+        class="error-message"
+      >
+        City is required.
+      </p>
     </div>
   </form>
   <div class="navigation-buttons-container">

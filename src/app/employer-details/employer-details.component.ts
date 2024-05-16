@@ -20,6 +20,8 @@ export class EmployerDetailsComponent {
     this.fetchCities();
   }
 
+  formSubmitted: boolean = false;
+
   fetchCities(): void {
     this.formDataService.fetchCities().subscribe(
       cities => {
@@ -42,14 +44,41 @@ export class EmployerDetailsComponent {
   errorMessage: string = '';
 
   handleNext(): void {
+    this.formSubmitted = true;
     this.formData.employerDetails.createAddressCommand.cityId = parseInt(
       this.formData.employerDetails.createAddressCommand.cityId,
       10
     );
-    this.nextStep.emit();
+    if (this.validateForm()) {
+      this.nextStep.emit();
+    }
   }
 
   handlePrev(): void {
     this.prevStep.emit();
+  }
+
+  validateForm(): boolean {
+    this.errorMessage = '';
+
+    if (
+      !this.formData.employerDetails.employerName ||
+      !this.formData.employerDetails.employerEmail ||
+      !this.formData.employerDetails.employerPhone ||
+      !this.formData.employerDetails.employerTelephone ||
+      !this.formData.employerDetails.createAddressCommand.residenceNumber ||
+      !this.formData.employerDetails.createAddressCommand.suburb ||
+      !this.formData.employerDetails.createAddressCommand.cityId
+    ) {
+      console.log('Invaid Data Error');
+      return false;
+    }
+
+    if (!this.formData.employerDetails.employerEmail.includes('@')) {
+      this.errorMessage = 'Please enter a valid email address.';
+      return false;
+    }
+
+    return true;
   }
 }
