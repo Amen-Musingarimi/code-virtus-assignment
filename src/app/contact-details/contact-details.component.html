@@ -1,0 +1,112 @@
+<div class="multistep-form">
+  <div class="section-heading-container">
+    <h1 class="section-heading-bg">Contact Details</h1>
+    <p class="section-heading-sm">Personal Contact Details</p>
+  </div>
+  <form class="add-category-details-cont">
+    <div class="form_control">
+      <label class="input_label">
+        Email
+      </label>
+      <input
+        type="email"
+        name="email"
+        required
+        [(ngModel)]="formData.contactDetails.email"
+        placeholder="Email"
+        class="input_area"
+      />
+    </div>
+
+    <div class="form_control">
+      <label class="input_label">
+        Mobile Number
+      </label>
+      <input
+        type="text"
+        name="mobileNumber"
+        required
+        [(ngModel)]="formData.contactDetails.contactPhoneNumber"
+        placeholder="Mobile Number"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Telephone
+      </label>
+      <input
+        type="text"
+        name="telephone"
+        required
+        [(ngModel)]="formData.contactDetails.contactTelephone"
+        placeholder="Telephone"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Communication Type
+      </label>
+      <select
+        name="communicationId"
+        [(ngModel)]="formData.contactDetails.communicationId"
+        required
+        class="input_area"
+      >
+        <option
+          *ngFor="let communicationType of communicationTypes"
+          [value]="communicationType.id"
+          >{{ communicationType.name }}</option
+        >
+      </select>
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Resident Number
+      </label>
+      <input
+        type="text"
+        required
+        name="residentNumber"
+        [(ngModel)]="
+          formData.contactDetails.createAddressCommand.residentNumber
+        "
+        placeholder="Resident Number"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Suburb
+      </label>
+      <input
+        type="text"
+        name="suburb"
+        required
+        [(ngModel)]="formData.contactDetails.createAddressCommand.suburb"
+        placeholder="Suburb"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        City
+      </label>
+      <select
+        name="cityId"
+        [(ngModel)]="formData.contactDetails.createAddressCommand.cityId"
+        required
+        class="input_area"
+      >
+        <option *ngFor="let city of cities" [value]="city.id">{{
+          city.name
+        }}</option>
+      </select>
+    </div>
+  </form>
+  <div class="navigation-buttons-container">
+    <button (click)="handlePrev()" class="navigation-button">Previous</button>
+    <button (click)="handleNext()" class="navigation-button">Next</button>
+  </div>
+</div>

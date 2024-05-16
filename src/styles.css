@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  position: relative;
+  font-size: 0.8rem;
+}
+
+.multistep-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.add-category-details-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.section-heading-bg {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.section-heading-sm {
+  color: gray;
+}
+
+.form_control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.input_label {
+  color: #000;
+}
+
+.input_area {
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  color: inherit;
+  font-family: inherit;
+  color: inherit;
+  margin-right: 0.5rem;
+}
+
+.navigation-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.navigation-button {
+  width: 50%;
+  background-color: #00008b;
+  padding: 0.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navigation-button:hover {
+  background-color: #010164;
+}
+
+@media only screen and (max-width: 767px) {
+  .add-category-details-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

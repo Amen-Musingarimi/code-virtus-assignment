@@ -1,0 +1,81 @@
+<div class="multistep-form">
+  <div class="section-heading-container">
+    <h1 class="section-heading-bg">Banking Details</h1>
+    <p class="section-heading-sm">Banking Details</p>
+  </div>
+  <form class="add-category-details-cont">
+    <div class="form_control">
+      <label class="input_label">
+        Account Holder Name
+      </label>
+      <input
+        type="text"
+        name="accountHolderName"
+        required
+        [(ngModel)]="formData.bankingDetails.accountHolderName"
+        placeholder="Account Holder Name"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Account Number
+      </label>
+      <input
+        type="text"
+        name="accountNumber"
+        required
+        [(ngModel)]="formData.bankingDetails.accountNumber"
+        placeholder="Account Number"
+        class="input_area"
+      />
+    </div>
+    <div class="form_control">
+      <label class="input_label">
+        Currency
+      </label>
+      <select
+        name="currencyId"
+        [(ngModel)]="formData.bankingDetails.currencyId"
+        required
+        class="input_area"
+      >
+        <option *ngFor="let currency of currencies" [value]="currency.id">{{
+          currency.name
+        }}</option>
+      </select>
+    </div>
+    <div class="form_control">
+      <label class="input_label">Bank</label>
+      <select
+        name="bankId"
+        (change)="handleBankChange($event)"
+        required
+        class="input_area"
+      >
+        <option value="">Select Bank</option>
+        <option *ngFor="let bank of banks" [value]="bank.id">{{
+          bank.name
+        }}</option>
+      </select>
+    </div>
+    <div class="form_control">
+      <label class="input_label">Bank Branch</label>
+      <select
+        name="bankBranchId"
+        [(ngModel)]="formData.bankingDetails.bankBranchId"
+        required
+        class="input_area"
+      >
+        <option value="">Select Bank Branch</option>
+        <option *ngFor="let branch of bankBranches" [value]="branch.id">{{
+          branch.name
+        }}</option>
+      </select>
+    </div>
+  </form>
+  <div class="navigation-buttons-container">
+    <button (click)="handlePrev()" class="navigation-button">Previous</button>
+    <button (click)="handleNext()" class="navigation-button">Next</button>
+  </div>
+</div>

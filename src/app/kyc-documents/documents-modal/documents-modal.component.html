@@ -1,0 +1,63 @@
+<form class="modal-forms">
+  <div class="form-control-wrapper">
+    <label for="nationalID" class="input_label">National ID</label>
+    <input
+      type="file"
+      id="nationalID"
+      required
+      placeholder="National ID"
+      (change)="onChangeFile($event)"
+    />
+  </div>
+
+  <div class="form-control-wrapper">
+    <label for="proofOfResidence" class="input_label">Proof of Residence</label>
+    <input
+      type="file"
+      id="proofOfResidence"
+      placeholder="Proof of Residence"
+      (change)="onChangeFile($event)"
+    />
+  </div>
+  <div class="form-control-wrapper">
+    <label for="paySlip" class="input_label">Pay Slip</label>
+    <input
+      type="file"
+      id="paySlip"
+      accept="image/*"
+      placeholder="Pay Slip"
+      (change)="onChangeFile($event)"
+    />
+  </div>
+  <div class="form-control-wrapper">
+    <label for="bankStatement" class="input_label">Bank Statement</label>
+    <input
+      type="file"
+      id="bankStatement"
+      accept="image/*"
+      placeholder="Bank Statement"
+      (change)="onChangeFile($event)"
+    />
+  </div>
+
+  <div class="form-control-wrapper">
+    <label for="employmentConfirmation" class="input_label"
+      >Employment Confirmation</label
+    >
+    <input
+      type="file"
+      id="employmentConfirmation"
+      accept="image/*"
+      placeholder="Employment Confirmation"
+      (change)="onChangeFile($event)"
+    />
+  </div>
+  <div class="buttons-container">
+    <button type="button" class="modal-buttons cancel-btn" (click)="close()">
+      Cancel
+    </button>
+    <button type="button" class="modal-buttons okay-btn" (click)="close()">
+      Ok
+    </button>
+  </div>
+</form>
