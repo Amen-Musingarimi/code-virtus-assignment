@@ -101,7 +101,6 @@ export class ContactDetailsComponent {
 
     if (!this.formData.contactDetails.email.includes('@')) {
       this.errorMessage = 'Please enter a valid email address.';
-      console.log('Invalid email');
       return false;
     }
 
