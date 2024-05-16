@@ -73,6 +73,10 @@ export class BankingDetailsComponent {
 
   errorMessage: string = '';
 
+  trimData(text: string) {
+    return text.trim();
+  }
+
   handleNext(): void {
     this.formSubmitted = true;
     this.formData.bankingDetails.currencyId = parseInt(
@@ -82,6 +86,12 @@ export class BankingDetailsComponent {
     this.formData.bankingDetails.bankBranchId = parseInt(
       this.formData.bankingDetails.bankBranchId,
       10
+    );
+    this.formData.bankingDetails.accountNumber = this.trimData(
+      this.formData.bankingDetails.accountNumber
+    );
+    this.formData.bankingDetails.accountHolderName = this.trimData(
+      this.formData.bankingDetails.accountHolderName
     );
     if (this.validateForm()) {
       this.nextStep.emit();
