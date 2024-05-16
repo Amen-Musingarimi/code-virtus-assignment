@@ -62,10 +62,19 @@ export class PersonalDataComponent {
 
   handleNext(): void {
     this.formSubmitted = true;
-    this.formData.dateOfBirth = this.formatDate(this.formData.dateOfBirth);
+    this.formData.firstName = this.trimData(this.formData.firstName);
+    this.formData.surname = this.trimData(this.formData.surname);
+    this.formData.nationalIdNumber = this.trimData(
+      this.formData.nationalIdNumber
+    );
+    this.formData.occupation = this.trimData(this.formData.occupation);
     if (this.validateForm()) {
       this.nextStep.emit();
     }
+  }
+
+  trimData(text: string) {
+    return text.trim();
   }
 
   validateForm(): boolean {
