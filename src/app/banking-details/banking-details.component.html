@@ -16,12 +16,14 @@
         placeholder="Account Holder Name"
         class="input_area"
       />
-      <p
-        *ngIf="formSubmitted && !formData.bankingDetails.accountHolderName"
-        class="error-message"
-      >
-        Accounter Holder Name is required.
-      </p>
+      <div class="error-container">
+        <p
+          *ngIf="formSubmitted && !formData.bankingDetails.accountHolderName"
+          class="error-message"
+        >
+          Accounter Holder Name is required.
+        </p>
+      </div>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -35,12 +37,14 @@
         placeholder="Account Number"
         class="input_area"
       />
-      <p
-        *ngIf="formSubmitted && !formData.bankingDetails.accountNumber"
-        class="error-message"
-      >
-        Account Number is required.
-      </p>
+      <div class="error-container">
+        <p
+          *ngIf="formSubmitted && !formData.bankingDetails.accountNumber"
+          class="error-message"
+        >
+          Account Number is required.
+        </p>
+      </div>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -56,12 +60,14 @@
           currency.name
         }}</option>
       </select>
-      <p
-        *ngIf="formSubmitted && !formData.bankingDetails.currencyId"
-        class="error-message"
-      >
-        Currency is required.
-      </p>
+      <div class="error-container">
+        <p
+          *ngIf="formSubmitted && !formData.bankingDetails.currencyId"
+          class="error-message"
+        >
+          Currency is required.
+        </p>
+      </div>
     </div>
     <div class="form_control">
       <label class="input_label">Bank</label>
@@ -90,12 +96,14 @@
           branch.name
         }}</option>
       </select>
-      <p
-        *ngIf="formSubmitted && !formData.bankingDetails.bankBranchId"
-        class="error-message"
-      >
-        Bank Branch is required. Select Bank first.
-      </p>
+      <div class="error-container">
+        <p
+          *ngIf="formSubmitted && !formData.bankingDetails.bankBranchId"
+          class="error-message"
+        >
+          Bank Branch is required. Select Bank first.
+        </p>
+      </div>
     </div>
   </form>
   <div class="navigation-buttons-container">
