@@ -1,20 +1,10 @@
 <div class="wrapping-container">
   <div class="navigation-container">
-    <a (click)="navigateToStep(1)" [class.active]="step === 1"
-      >Personal Details</a
-    >
-    <a (click)="navigateToStep(2)" [class.active]="step === 2"
-      >Contact Details</a
-    >
-    <a (click)="navigateToStep(3)" [class.active]="step === 3"
-      >Employer Details</a
-    >
-    <a (click)="navigateToStep(4)" [class.active]="step === 4"
-      >Banking Details</a
-    >
-    <a (click)="navigateToStep(5)" [class.active]="step === 5"
-      >Know your cutomer documents</a
-    >
+    <a [class.active]="step === 1">Personal Details</a>
+    <a [class.active]="step === 2">Contact Details</a>
+    <a [class.active]="step === 3">Employer Details</a>
+    <a [class.active]="step === 4">Banking Details</a>
+    <a [class.active]="step === 5">Know your cutomer documents</a>
   </div>
 
   <div class="forms-container">
