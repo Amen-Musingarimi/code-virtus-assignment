@@ -23,6 +23,8 @@ export class BankingDetailsComponent {
     this.fetchBanks();
   }
 
+  formSubmitted: boolean = false;
+
   fetchCurrencies(): void {
     this.formDataService.fetchCurrencies().subscribe(
       currencies => {
@@ -72,6 +74,7 @@ export class BankingDetailsComponent {
   errorMessage: string = '';
 
   handleNext(): void {
+    this.formSubmitted = true;
     this.formData.bankingDetails.currencyId = parseInt(
       this.formData.bankingDetails.currencyId,
       10
@@ -80,10 +83,28 @@ export class BankingDetailsComponent {
       this.formData.bankingDetails.bankBranchId,
       10
     );
-    this.nextStep.emit();
+    if (this.validateForm()) {
+      this.nextStep.emit();
+    }
   }
 
   handlePrev(): void {
     this.prevStep.emit();
+  }
+
+  validateForm(): boolean {
+    this.errorMessage = '';
+
+    if (
+      !this.formData.bankingDetails.accountNumber ||
+      !this.formData.bankingDetails.accountHolderName ||
+      !this.formData.bankingDetails.currencyId ||
+      !this.formData.bankingDetails.bankBranchId
+    ) {
+      console.log('Invaid Data Error');
+      return false;
+    }
+
+    return true;
   }
 }
