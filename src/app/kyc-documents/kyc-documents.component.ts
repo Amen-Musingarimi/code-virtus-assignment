@@ -20,12 +20,10 @@ export class KycDocumentsComponent {
   }
 
   openModal() {
-    console.log('Show Model button clicked');
     this.showModal = true;
   }
 
   closeModal() {
-    console.log('Modal clicked');
     this.showModal = false;
   }
 

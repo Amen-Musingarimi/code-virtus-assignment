@@ -18,14 +18,12 @@ export class DocumentsModalComponent {
       filePath: `/files/${file.name}`
     };
 
-    console.log(fileDetails);
     this.documentSelected.emit(fileDetails);
   }
 
   onChangeFile(event: any): void {
     if (event.target.files && event.target.files.length > 0) {
       const file = event.target.files[0];
-      console.log(file);
       this.selectDocument(file);
     }
   }
