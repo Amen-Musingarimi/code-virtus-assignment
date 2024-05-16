@@ -11,6 +11,7 @@ export class FormDataService {
   constructor(private http: HttpClient) {}
 
   submitFormData(formData: Client): Observable<any> {
+    console.log(formData);
     return this.http.post<any>(
       'https://api.clientsure.codevirtus.com/opn/v1/individual-client/create',
       formData

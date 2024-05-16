@@ -79,7 +79,6 @@ export class MultiStepFormComponent {
   }
 
   handleSubmit(): void {
-    console.log(this.formData);
     this.formDataService.submitFormData(this.formData).subscribe(
       response => {
         console.log('Form data submitted successfully:', response);
