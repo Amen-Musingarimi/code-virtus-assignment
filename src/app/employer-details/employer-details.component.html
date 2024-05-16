@@ -14,6 +14,12 @@
         required
         class="input_area"
       />
+      <p
+        *ngIf="formSubmitted && !formData.employerDetails.employerName"
+        class="error-message"
+      >
+        Employer Name is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -26,6 +32,21 @@
         required
         class="input_area"
       />
+      <p
+        *ngIf="formSubmitted && !formData.employerDetails.employerEmail"
+        class="error-message"
+      >
+        Employer Email is required.
+      </p>
+      <p
+        *ngIf="
+          formSubmitted &&
+          (!formData.employerDetails.employerEmail || errorMessage)
+        "
+        class="error-message"
+      >
+        {{ errorMessage }}
+      </p>
     </div>
 
     <div class="form_control">
@@ -39,6 +60,12 @@
         class="input_area"
         required
       />
+      <p
+        *ngIf="formSubmitted && !formData.employerDetails.employerPhone"
+        class="error-message"
+      >
+        Employer Mobile Number is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -51,6 +78,12 @@
         class="input_area"
         required
       />
+      <p
+        *ngIf="formSubmitted && !formData.employerDetails.employerTelephone"
+        class="error-message"
+      >
+        Employer Telephone Number is required.
+      </p>
     </div>
 
     <div class="form_control">
@@ -66,6 +99,15 @@
         class="input_area"
         required
       />
+      <p
+        *ngIf="
+          formSubmitted &&
+          !formData.employerDetails.createAddressCommand.residenceNumber
+        "
+        class="error-message"
+      >
+        Employer Street Address is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -78,6 +120,14 @@
         class="input_area"
         required
       />
+      <p
+        *ngIf="
+          formSubmitted && !formData.employerDetails.createAddressCommand.suburb
+        "
+        class="error-message"
+      >
+        Employer Surbub is required.
+      </p>
     </div>
     <div class="form_control">
       <label class="input_label">
@@ -93,6 +143,14 @@
           city.name
         }}</option>
       </select>
+      <p
+        *ngIf="
+          formSubmitted && !formData.employerDetails.createAddressCommand.cityId
+        "
+        class="error-message"
+      >
+        Employer City is required.
+      </p>
     </div>
   </form>
   <div class="navigation-buttons-container">
