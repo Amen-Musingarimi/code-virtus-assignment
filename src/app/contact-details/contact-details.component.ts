@@ -99,8 +99,7 @@ export class ContactDetailsComponent {
       return false;
     }
 
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(this.formData.contactDetails.email)) {
+    if (!this.formData.contactDetails.email.includes('@')) {
       this.errorMessage = 'Please enter a valid email address.';
       console.log('Invalid email');
       return false;
